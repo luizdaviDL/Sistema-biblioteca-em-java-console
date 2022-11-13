@@ -80,32 +80,6 @@ public class main {
 		System.out.println("seja bem vindo(a) a biblioteca da sua universidade escolha uma das opções abaixo");
 		System.out.println("1 - Emprestar livro");
 		System.out.println("2 - Devolver livro");
-		System.out.println("Digite aqui:");
-		int opcao = sc.nextInt();
-	
-		switch(opcao) {
-			case 1:
-				emprestimo();
-				
-			case 2:				
-				devolucao();
-		}
 	}
-	
-	
-	//-----------------------------------------------
-
-	private static void emprestimo() {
-		// TODO Auto-generated method stub
-		
-	}
-	
-	//--------------------------------------
-	
-	private static void devolucao() {
-		// TODO Auto-generated method stub
-		
-	}
-
 
 }

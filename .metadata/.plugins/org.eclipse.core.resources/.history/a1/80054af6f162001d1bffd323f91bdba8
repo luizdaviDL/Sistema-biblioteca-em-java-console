@@ -82,16 +82,12 @@ public class main {
 		System.out.println("2 - Devolver livro");
 		System.out.println("Digite aqui:");
 		int opcao = sc.nextInt();
-	
+		
 		switch(opcao) {
 			case 1:
 				emprestimo();
-				
-			case 2:				
-				devolucao();
 		}
 	}
-	
 	
 	//-----------------------------------------------
 
@@ -99,13 +95,5 @@ public class main {
 		// TODO Auto-generated method stub
 		
 	}
-	
-	//--------------------------------------
-	
-	private static void devolucao() {
-		// TODO Auto-generated method stub
-		
-	}
-
 
 }
