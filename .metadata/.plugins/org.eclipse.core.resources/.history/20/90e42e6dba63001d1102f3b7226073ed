@@ -1,0 +1,39 @@
+package servico;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
+import models.Aluno;
+
+public static class AlunoServico {
+	static Scanner sc = new Scanner(System.in);
+	static List<Aluno> alunos = new ArrayList<>();
+	
+	public static void alunoLogin() {
+		//System.out.println("");
+		
+		System.out.println("-----Ola entre com seu e-mail e senha-----");
+		
+		System.out.println("Digite seu e-mail:");
+		String email = sc.next();
+		System.out.println("Agora sua senha:");
+		String senha = sc.next();
+		
+		for(Aluno achar: alunos) {
+			if(achar.length > 0) {
+				if(achar.getClass().equals(email) && achar.getSenha().equals(senha)) {
+					alunoMenu();
+				}
+				else {
+					System.out.println("Aluno não cadastrado no sistema");
+				}
+			}else {
+				System.out.println("O banco de dados esta vazio, cadastre novos alunos");
+			}
+			
+		}
+		
+	}
+	
+}

@@ -9,6 +9,8 @@ public class Aluno {
 	private boolean status;
 	
 	int contador=0;
+	public int length;
+	
 	public Aluno(String nome, String sobreNome, String email, String senha, boolean status) {
 		super();
 		this.id = contador;
