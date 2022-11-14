@@ -59,23 +59,14 @@ public  class AlunoServico {
 		//-----------------------------------------------
 
 		private static void emprestimo() {
-			int contador =0;
 			System.out.println("Quantos livros voce vai emprestar:");
 			int livrosQuant = sc.nextInt();
-			
 			System.out.println("------Livros Disponiveis-------");
 			
 			for(Livros livro:livros) {
 				System.out.println("-----------");
 				System.out.println(livro);
 				System.out.println("-----------");
-			}
-			
-			while(contador > livrosQuant) {
-				System.out.println("Digite o id do livro selecionado");
-				System.out.println("Digite aqui:");
-				int idLivro = sc.nextInt();
-				alunos
 			}
 			
 			

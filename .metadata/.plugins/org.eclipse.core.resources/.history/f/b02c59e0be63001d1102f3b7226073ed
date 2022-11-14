@@ -75,7 +75,6 @@ public  class AlunoServico {
 				System.out.println("Digite o id do livro selecionado");
 				System.out.println("Digite aqui:");
 				int idLivro = sc.nextInt();
-				alunos
 			}
 			
 			

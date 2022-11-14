@@ -8,9 +8,10 @@ import servico.AlunoServico;
 
 public class main {
 	/*Usuar static para acessar a var sem instancia-la*/
-	static Scanner sc = new Scanner(System.in);
+	
 	public static void main(String[] args) {
 		operacao();
+
 	}
 	
 	//-------------------------------
@@ -31,4 +32,7 @@ public class main {
 				AlunoServico.alunoLogin();
 		}
 	}
+	
+	
+
 }

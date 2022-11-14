@@ -1,15 +1,12 @@
 package models;
 
-import java.util.List;
-
-public  class Aluno {
+public class Aluno {
 	private int id;
 	private String nome;
 	private String sobreNome;
 	private String email;
 	private String senha;
 	private boolean status;
-	private List<?> emprestimos;
 	
 	int contador=0;
 	public int length;
@@ -72,16 +69,6 @@ public  class Aluno {
 	public void setStatus(boolean status) {
 		this.status = status;
 	}
-
-	public List<?> getEmprestimos() {
-		return emprestimos;
-	}
-
-	public void setEmprestimos(List<?> emprestimos) {
-		this.emprestimos = emprestimos;
-	}
-
-	
 	
 	
 	
