@@ -1,6 +1,6 @@
 package models;
 
-public class Livros {
+public class Livros implements Comparable<Livros> {
 	private int id;
 	private String nome;
 	private String descricao;
@@ -50,6 +50,13 @@ public class Livros {
 	@Override
 	public String toString() {
 		return "Livros [id=" + id + ", nome=" + nome + ", descricao=" + descricao + ", autor=" + autor + "]";
+	}
+
+
+	@Override
+	public int compareTo(Livros o) {
+		
+		return this.getNome().compareToIgnoreCase(getNome());
 	}
 
 }

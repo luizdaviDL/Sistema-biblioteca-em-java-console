@@ -1,5 +1,6 @@
 package models;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public  class Aluno {
@@ -9,19 +10,21 @@ public  class Aluno {
 	private String email;
 	private String senha;
 	private boolean status;
-	private List<?> emprestimos;
+	public static List<?> emprestimos = new ArrayList<>();
+	
 	
 	int contador=0;
 	public int length;
+
 	
-	public Aluno(String nome, String sobreNome, String email, String senha, boolean status) {
+	public Aluno(String nome, String sobreNome, String email, String senha) {
 		super();
 		this.id = contador;
 		this.nome = nome;
 		this.sobreNome = sobreNome;
 		this.email = email;
 		this.senha = senha;
-		this.status = status;
+		this.status = true;
 		contador++;
 	}
 
@@ -73,18 +76,20 @@ public  class Aluno {
 		this.status = status;
 	}
 
-	public List<?> getEmprestimos() {
+	public static List<?> getEmprestimos() {
 		return emprestimos;
 	}
 
-	public void setEmprestimos(List<?> emprestimos) {
-		this.emprestimos = emprestimos;
+	public static void setEmprestimos(List<?> emprestimos) {
+		Aluno.emprestimos = emprestimos;
+	}
+
+	@Override
+	public String toString() {
+		return "Aluno [id=" + id + ", nome=" + nome + ", sobreNome=" + sobreNome + ", email=" + email + ", senha="
+				+ senha + ", status=" + status + "]";
 	}
 
 	
 	
-	
-	
-	
-
 }

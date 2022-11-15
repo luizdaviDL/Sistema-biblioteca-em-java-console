@@ -1,6 +1,7 @@
 package servico;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Scanner;
 
@@ -8,9 +9,11 @@ import models.Aluno;
 import models.Livros;
 
 public  class AlunoServico {
-	static Scanner sc = new Scanner(System.in);
+	static Scanner sc = new Scanner(System.in); 
 	static List<Livros> livros = new ArrayList<>();
 	static List<Aluno> alunos = new ArrayList<>();
+	static List<Livros> liEscolha = new ArrayList<>();
+
 	
 	public static void alunoLogin() {
 		//System.out.println("");
@@ -21,23 +24,27 @@ public  class AlunoServico {
 		String email = sc.next();
 		System.out.println("Agora sua senha:");
 		String senha = sc.next();
-		
-		for(Aluno achar: alunos) {
-			if(achar.length > 0) {
-				if(achar.getClass().equals(email) && achar.getSenha().equals(senha)) {
+	
+		if(alunos.size() > 0) {
+			for(Aluno achar: alunos) {
+				if(achar.getEmail().equals(email) && achar.getSenha().equals(senha)) {
 					alunoMenu();
-				}
-				else {
+			
+				}else {
 					System.out.println("Aluno não cadastrado no sistema");
 				}
-			}else {
-				System.out.println("O banco de dados esta vazio, cadastre novos alunos");
 			}
-			
+				
 		}
-		
+			
 	}
 	
+		/*
+		 * 
+		
+		}else {
+			System.out.println("O banco de dados esta vazio, cadastre novos alunos");
+		 */
 	//------------------------------------------------
 
 		private static void alunoMenu() {
@@ -72,10 +79,25 @@ public  class AlunoServico {
 			}
 			
 			while(contador > livrosQuant) {
+				contador++;
 				System.out.println("Digite o id do livro selecionado");
 				System.out.println("Digite aqui:");
 				int idLivro = sc.nextInt();
-				alunos
+				for(Livros livro: livros) {
+					if(livro.getId() == idLivro) {
+						liEscolha.add(livro);
+					}
+				}
+				
+				Aluno.setEmprestimos(liEscolha);
+				System.out.println("-------Livros Selecionados-------\n\n");
+				
+				
+				for(Livros selecionados: liEscolha) {
+					Collections.sort(liEscolha);
+					System.out.println(selecionados);
+				}
+				
 			}
 			
 			
@@ -88,4 +110,21 @@ public  class AlunoServico {
 			
 		}
 	
+		//--------------------------
+		public static void cadastro() {
+			System.out.println("-------Aluno seja bem vindo vamos realizar seu cadastro-------\n\n");
+			System.out.println("Me infome seu nome:");
+			String nome = sc.next();
+			System.out.println("Agora seu sobrnome:");
+			String sobreNome = sc.next();
+			System.out.println("Seu email:");
+			String email = sc.next();
+			System.out.println("Agora crie sua senha de acesso:");
+			String senha = sc.next();
+			Aluno alunoCadastro = new Aluno(nome,sobreNome,email,senha);
+			alunos.add(alunoCadastro);
+			
+			System.out.println("Conta cadastrada com sucesso");
+			System.out.println(alunoCadastro);
+		}
 }
