@@ -1,0 +1,9 @@
+package servico;
+
+public interface CadastroInterface {
+	//public void cadastro();
+	public static String cadastro() {
+		return null;
+	}
+	
+}

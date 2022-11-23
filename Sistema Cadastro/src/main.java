@@ -28,6 +28,7 @@ public class main {
 				
 			case 3:
 				AlunoServico.cadastro();
+				/*AlunoServico.cadastro();*/
 				operacao();
 		}
 	}

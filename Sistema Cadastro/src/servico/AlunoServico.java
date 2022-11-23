@@ -8,7 +8,7 @@ import java.util.Scanner;
 import models.Aluno;
 import models.Livros;
 
-public  class AlunoServico {
+public  class AlunoServico implements CadastroInterface{
 	static Scanner sc = new Scanner(System.in); 
 	static List<Livros> livros = new ArrayList<>();
 	static List<Aluno> alunos = new ArrayList<>();
@@ -33,18 +33,10 @@ public  class AlunoServico {
 				}else {
 					System.out.println("Aluno não cadastrado no sistema");
 				}
-			}
-				
-		}
-			
+			}	
+		}		
 	}
 	
-		/*
-		 * 
-		
-		}else {
-			System.out.println("O banco de dados esta vazio, cadastre novos alunos");
-		 */
 	//------------------------------------------------
 
 		private static void alunoMenu() {
@@ -109,22 +101,40 @@ public  class AlunoServico {
 			// TODO Auto-generated method stub
 			
 		}
-	
-		//--------------------------
-		public static void cadastro() {
-			System.out.println("-------Aluno seja bem vindo vamos realizar seu cadastro-------\n\n");
-			System.out.println("Me infome seu nome:");
-			String nome = sc.next();
-			System.out.println("Agora seu sobrnome:");
-			String sobreNome = sc.next();
-			System.out.println("Seu email:");
-			String email = sc.next();
-			System.out.println("Agora crie sua senha de acesso:");
-			String senha = sc.next();
-			Aluno alunoCadastro = new Aluno(nome,sobreNome,email,senha);
-			alunos.add(alunoCadastro);
+
+		@Override
+		public void cadastro() {
+			// TODO Auto-generated method stub
 			
-			System.out.println("Conta cadastrada com sucesso");
-			System.out.println(alunoCadastro);
 		}
+
+		
+		
+		//--------------------------
+		
+		
+
+		
+
+	
+	
+		
+		
+		/*
+		
+		System.out.println("-------Aluno seja bem vindo vamos realizar seu cadastro-------\n\n");
+		System.out.println("Me infome seu nome:");
+		String nome = sc.next();
+		System.out.println("Agora seu sobrnome:");
+		String sobreNome = sc.next();
+		System.out.println("Seu email:");
+		String email = sc.next();
+		System.out.println("Agora crie sua senha de acesso:");
+		String senha = sc.next();
+		Aluno alunoCadastro = new Aluno(nome,sobreNome,email,senha);
+		alunos.add(alunoCadastro);
+		
+		System.out.println("Conta cadastrada com sucesso");
+		System.out.println(alunoCadastro); 
+		*/
 }
