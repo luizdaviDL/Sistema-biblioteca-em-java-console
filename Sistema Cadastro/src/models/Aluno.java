@@ -2,9 +2,11 @@ package models;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 public  class Aluno {
 	private int id;
+	private int numeroMatricula;
 	private String nome;
 	private String sobreNome;
 	private String email;
@@ -12,14 +14,20 @@ public  class Aluno {
 	private boolean status;
 	public static List<?> emprestimos = new ArrayList<>();
 	
-	
+	Random ra = new Random();
+	int aleatorio = ra.nextInt(500);
 	int contador=0;
 	public int length;
 
 	
+	public Aluno() {
+		super();
+	}
+
 	public Aluno(String nome, String sobreNome, String email, String senha) {
 		super();
 		this.id = contador;
+		this.numeroMatricula =  aleatorio;
 		this.nome = nome;
 		this.sobreNome = sobreNome;
 		this.email = email;
@@ -34,6 +42,14 @@ public  class Aluno {
 
 	public void setId(int id) {
 		this.id = id;
+	}
+
+	public int getNumeroMatricula() {
+		return numeroMatricula;
+	}
+
+	public void setNumeroMatricula(int numeroMatricula) {
+		this.numeroMatricula = numeroMatricula;
 	}
 
 	public String getNome() {

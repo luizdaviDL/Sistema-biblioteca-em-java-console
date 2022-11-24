@@ -1,0 +1,7 @@
+package models;
+
+public class AlunoBiblioteca {
+	private String nome;
+	private String sobrenome;
+	private int matricula;
+}

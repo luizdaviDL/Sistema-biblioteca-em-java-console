@@ -1,0 +1,145 @@
+package servico;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+import java.util.Scanner;
+
+import models.Aluno;
+import models.Livros;
+
+public  class AlunoServico implements CadastroInterface{
+	static Scanner sc = new Scanner(System.in); 
+	static List<Livros> livros = new ArrayList<>();
+	static List<Aluno> alunos = new ArrayList<>();
+	static List<Livros> liEscolha = new ArrayList<>();
+
+	
+	public static void alunoLogin() {
+		//System.out.println("");
+		
+		System.out.println("-----Ola entre com seu e-mail e senha-----");
+		
+		System.out.println("Digite seu e-mail:");
+		String email = sc.next();
+		System.out.println("Agora sua senha:");
+		String senha = sc.next();
+		
+		if(alunos.size() > 0) {
+				for(Aluno achar: alunos) {
+					if(achar.getEmail().equals(email) && achar.getSenha().equals(senha)) {	
+						alunoMenu();
+				
+					}else {
+						System.out.println("Aluno não cadastrado no sistema");
+					}
+				}	
+		}	/*/*/	
+		
+			
+	}
+		
+
+	
+	//------------------------------------------------
+
+		private static void alunoMenu() {
+			System.out.println("seja bem vindo(a) a biblioteca da sua universidade escolha uma das opções abaixo");
+			System.out.println("1 - Emprestar livro");
+			System.out.println("2 - Devolver livro");
+			System.out.println("Digite aqui:");
+			int opcao = sc.nextInt();
+		
+			switch(opcao) {
+				case 1:
+					emprestimo();
+					
+				case 2:				
+					devolucao();
+			}
+		}
+		
+		//-----------------------------------------------
+
+		private static void emprestimo() {
+			int contador =0;
+			System.out.println("Quantos livros voce vai emprestar:");
+			int livrosQuant = sc.nextInt();
+			
+			System.out.println("------Livros Disponiveis-------");
+			
+			for(Livros livro:livros) {
+				System.out.println("-----------");
+				System.out.println(livro);
+				System.out.println("-----------");
+			}
+			
+			while(contador > livrosQuant) {
+				contador++;
+				System.out.println("Digite o id do livro selecionado");
+				System.out.println("Digite aqui:");
+				int idLivro = sc.nextInt();
+				for(Livros livro: livros) {
+					if(livro.getId() == idLivro) {
+						liEscolha.add(livro);
+					}
+				}
+				
+				Aluno.setEmprestimos(liEscolha);
+				System.out.println("-------Livros Selecionados-------\n\n");
+				
+				
+				for(Livros selecionados: liEscolha) {
+					Collections.sort(liEscolha);
+					System.out.println(selecionados);
+				}
+				
+			}
+			
+			
+		}
+		
+		//--------------------------------------
+		
+		private static void devolucao() {
+			// TODO Auto-generated method stub
+			
+		}
+
+		@Override
+		public void cadastro() {
+			System.out.println("Me infome se nome:");
+			System.out.println("Sobrenome:");
+			
+		}
+
+		
+		
+		//--------------------------
+		
+		
+
+		
+
+	
+	
+		
+		
+		/*
+		
+		System.out.println("-------Aluno seja bem vindo vamos realizar seu cadastro-------\n\n");
+		System.out.println("Me infome seu nome:");
+		String nome = sc.next();
+		System.out.println("Agora seu sobrnome:");
+		String sobreNome = sc.next();
+		System.out.println("Seu email:");
+		String email = sc.next();
+		System.out.println("Agora crie sua senha de acesso:");
+		String senha = sc.next();
+		Aluno alunoCadastro = new Aluno(nome,sobreNome,email,senha);
+		alunos.add(alunoCadastro);
+		
+		System.out.println("Conta cadastrada com sucesso");
+		System.out.println(alunoCadastro); 
+		*/
+}

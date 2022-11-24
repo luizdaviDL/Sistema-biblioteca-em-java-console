@@ -1,11 +1,25 @@
 
 import java.util.Scanner;
+
+import models.Aluno;
 import servico.AlunoServico;
 
 public class main {
-	/*Usuar static para acessar a var sem instancia-la*/
+	 /*Service*/
+	static AlunoServico service = new AlunoServico();
+	
 	static Scanner sc = new Scanner(System.in);
 	public static void main(String[] args) {
+		//---------instancia de aluno
+		
+		Aluno aluno = new Aluno() {
+			{
+				new Aluno("Luiz","Amorim","luiz.com", "1234");
+				new Aluno("Maria","Fernandes","maria.com", "2002");
+				new Aluno("Fabio","Arouxa","fabio.com", "4747");
+			}
+		};
+		
 		operacao();
 	}
 	
@@ -24,12 +38,19 @@ public class main {
 		
 		switch(opcao) {
 			case 1:
-				AlunoServico.alunoLogin();
+				service.alunoLogin();
 				
 			case 3:
-				AlunoServico.cadastro();
-				/*AlunoServico.cadastro();*/
-				operacao();
+				System.out.println("1 - Cadastro de aluno");
+				System.out.println("2 - Cadastro de Bibliotecario");
+				int cadastro = sc.nextInt();
+				
+				if(cadastro == 1) {
+					service.cadastro();
+				}else {
+					operacao();
+				}
+				
 		}
 	}
 }

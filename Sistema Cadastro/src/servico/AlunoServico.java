@@ -13,6 +13,7 @@ public  class AlunoServico implements CadastroInterface{
 	static List<Livros> livros = new ArrayList<>();
 	static List<Aluno> alunos = new ArrayList<>();
 	static List<Livros> liEscolha = new ArrayList<>();
+	
 
 	
 	public static void alunoLogin() {
@@ -24,18 +25,24 @@ public  class AlunoServico implements CadastroInterface{
 		String email = sc.next();
 		System.out.println("Agora sua senha:");
 		String senha = sc.next();
-	
+		
 		if(alunos.size() > 0) {
-			for(Aluno achar: alunos) {
-				if(achar.getEmail().equals(email) && achar.getSenha().equals(senha)) {
-					alunoMenu();
+				for(Aluno achar: alunos) {
+					if(achar.getEmail().equals(email) && achar.getSenha().equals(senha)) {	
+						alunoMenu();
+				
+					}else {
+						System.out.println("Aluno não cadastrado no sistema");
+					}
+				}	
+		}else {
+			System.out.println("Nao ha alunos cadastrados");
+		}
+		
 			
-				}else {
-					System.out.println("Aluno não cadastrado no sistema");
-				}
-			}	
-		}		
 	}
+		
+
 	
 	//------------------------------------------------
 
@@ -104,7 +111,14 @@ public  class AlunoServico implements CadastroInterface{
 
 		@Override
 		public void cadastro() {
-			// TODO Auto-generated method stub
+			System.out.println("Me infome se nome:");
+			String nome = sc.next();
+			System.out.println("Sobrenome:");
+			String sobrenome = sc.next();
+			System.out.println("Numero de matricula:");
+			int matricula = sc.nextInt();
+			
+			
 			
 		}
 
